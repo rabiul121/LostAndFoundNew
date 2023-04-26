@@ -1,0 +1,58 @@
+﻿@model User
+
+@{
+    ViewData["title"] = "Details for user";
+}
+
+<div class="text-center">
+    <p style="padding-top: 10px">
+        <h1>Details for @Model.Username</h1>
+    </p>
+</div>
+
+<div class="col-md-6 offset-md-3 text">
+
+    <div class="details">
+        <div class="">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="font-weight-bold">First Name</label>
+                    <input asp-for="FirstName" class="form-control" readonly />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Last Name</label>
+                    <input asp-for="LastName" class="form-control" readonly />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Username</label>
+                    <input asp-for="Username" class="form-control" readonly />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Password</label>
+                    <input asp-for="Password" class="form-control" readonly />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Email</label>
+                    <input asp-for="Email" class="form-control" readonly />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Contact</label>
+                    <input asp-for="Contact" class="form-control" readonly />
+                    <span asp-validation-for="Contact" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-outline-success float-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                </div>
+        </div>
+    </div>
+</div>

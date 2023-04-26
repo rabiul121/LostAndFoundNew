@@ -1,0 +1,59 @@
+﻿@model LostItem
+
+@{
+    ViewData["title"] = "Add a new item";
+}
+
+<div class="text-center">
+    <p>
+        <i class="bi bi-bag-plus-fill" style="font-size:50px"></i>
+    </p>
+    <h3 style="margin-top:-26px">Add New Item </h3>
+</div>
+<div class="col-md-6 offset-md-3 text">
+    <div class="">
+        <div class="">
+            <form asp-action="Create" enctype="multipart/form-data" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Photo</label>
+                    <input  asp-for="PhotoURL" class="form-control" placeholder="Select a Photo"/>
+                    <span asp-validation-for="PhotoURL" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Item Name</label>
+                    <input asp-for="ItemName" class="form-control" placeholder="Enter Item Name..." />
+                    <span asp-validation-for="ItemName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Category</label>
+                    <input asp-for="Category" class="form-control" placeholder="Enter Category..." />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Description</label>
+                    <textarea asp-for="Description" class="form-control" type="password" placeholder="Enter Description of the item..."></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Lost Area</label>
+                    <input asp-for="LostArea" class="form-control" placeholder="Enter Lost Area Name..." />
+                    <span asp-validation-for="LostArea" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Lost Date</label>
+                    <input asp-for="Date" class="form-control" placeholder="Enter Lost Date..." />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="submit" value="Create" class="btn btn-outline-success float-right" />
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
